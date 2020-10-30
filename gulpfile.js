@@ -1,12 +1,18 @@
-const gulp =  require('gulp');
+const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 
-gulp.task('hello', function(done) {
-    console.log('Hello, world!');
-    done();
+var minCss = require('gulp-cssmin');
+var rename = require('gulp-rename');
+ 
+// min-css
+gulp.task('min-css', function () {
+    return gulp.src('src/css/*.css')
+        .pipe(minCss())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist'));
 });
 
-// Static server
+// server
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
