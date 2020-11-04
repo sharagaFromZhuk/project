@@ -17,14 +17,42 @@
   max-width: 1256px;
   margin: auto; }
 
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Futura Book', sans-serif;
+  font-size: 14px; }
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Yeseva One', cursive; }
+  .section-title__image {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .section-title__image::before, .section-title__image::after {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background-color: #E3B873;
+      margin: 0 10px; }
+
 .button {
   padding: 13px 20px;
   border: none;
   border-radius: 2px;
   text-transform: uppercase; }
+  .button:hover {
+    cursor: pointer; }
   .button--primary {
     background-color: #E3B873;
-    color: #fff; }
+    color: #fff;
+    box-shadow: none;
+    transition: box-shadow .1s; }
+    .button--primary:hover {
+      box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2); }
   .button--outline {
     border: 1px solid #fff;
     background-color: transparent;
@@ -52,7 +80,10 @@
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  margin-right: 40px; }
+  margin-right: 40px;
+  transition: color .1s; }
+  .nav__item:hover {
+    color: #E3B873; }
 
 .phone {
   color: #E3B873; }
@@ -69,7 +100,16 @@
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   height: 100vh;
   color: #fff; }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 19, 19, 0.7); }
   .hero__content {
+    position: relative;
     max-width: 670px; }
   .hero__text {
     font-size: 22px;
@@ -95,6 +135,14 @@
     text-transform: uppercase;
     color: #fff;
     text-decoration: none; }
+    .hero__scroll-down::after {
+      content: '';
+      background: url("../img/arrow-down.svg") no-repeat center;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #E3B873;
+      border-radius: 50%;
+      margin-left: 12px; }
 
 .instagram {
   display: flex;
@@ -102,10 +150,19 @@
   align-items: center;
   background-color: #131313; }
   .instagram__link {
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     color: #E3B873;
     text-decoration: none;
-    transform: rotate(90deg); }
+    transform: rotate(90deg);
+    line-height: 0.8px; }
+    .instagram__link::after {
+      content: '';
+      width: 50px;
+      height: 1px;
+      background-color: #E3B873;
+      margin-left: 8px; }
 
 .title {
   margin: 0;
@@ -114,13 +171,6 @@
   font-size: 40px; }
   .title--primary {
     color: #E3B873; }
-
-*, *:before, *:after {
-  box-sizing: border-box; }
-
-body {
-  font-family: 'Futura Book', sans-serif;
-  font-size: 14px; }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
