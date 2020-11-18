@@ -13,20 +13,34 @@ img
 
 .section
     padding: 60px 0
+    &--dark
+        background-color: $dark
+        color: $white
     &-title
-        display: flex
-        justify-content: center
-        align-items: center
-        flex-direction: column
         text-align: center
-        margin-bottom: 2rem
-        &__heading     
+        &--left
+            text-align: left
+        &__heading   
+            font-size: 1.928rem  
             text-transform: uppercase
             font-family: 'Yeseva One', cursive
+            font-weight: 400
+            line-height: 2.672rem
+            &--primary
+                color: $primary
+        &__word
+            display: flex
+            align-items: center
+            &::after
+                content: ""
+                width: 90px
+                height: 2px
+                background-color: $primary
+                margin-left: 2rem
         &__image
             display: flex
             justify-content: center
-            align-items: center
+            align-items: center dire
             &::before, &::after
                 content: ''
                 width: 32px
@@ -35,7 +49,14 @@ img
                 margin: 0 10px
         &__text
             font-family: 'Futura Book', sans-serif
-            font-size: 1.428rem
-            max-width: 741px
+            font-size: 1.28rem
+            line-height: 2.07rem
+            max-width: 31.57rem
+            &--center
+                max-width: 100%
+                padding: 0 200px
+            &--upper
+                text-transform: uppercase
+
             
                 

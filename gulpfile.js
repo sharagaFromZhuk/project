@@ -1,4 +1,4 @@
-const {src, dest, watch} = require('gulp');
+const { src, dest, watch } = require('gulp');
 const browserSync = require('browser-sync').create();
 
 const sass = require('gulp-sass');
@@ -24,7 +24,7 @@ function bs() {
 };
 
 // sass
-function serveSass () {
+function serveSass() {
     return src('src/sass/*.sass', 'src/sass/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
@@ -35,10 +35,10 @@ function serveSass () {
 };
 
 // min-css
-function serveMinCss () {
+function serveMinCss() {
     return src('src/css/*.css')
         .pipe(minCss())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(dest('dist'));
 };
 
